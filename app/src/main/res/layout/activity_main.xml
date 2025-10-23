@@ -11,7 +11,7 @@
 		android:layout_width="34dp"
 		android:layout_height="45dp"
 		android:layout_marginStart="42dp"
-		android:layout_marginTop="75dp" 
+		android:layout_marginTop="35dp" 
 		android:inputType="number"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
@@ -23,7 +23,7 @@
         android:layout_height="45dp"
         android:inputType="number"
 		android:layout_marginStart="76dp"
-		android:layout_marginTop="75dp" 
+		android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +33,7 @@
         android:layout_height="45dp"
         android:inputType="number"
 		android:layout_marginStart="110dp"
-        android:layout_marginTop="75dp" 
+        android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent"
 		android:imeOptions="actionDone" />
@@ -44,7 +44,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="75dp" 
+        android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,7 +54,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="75dp" 
+        android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent"
 		android:imeOptions="actionDone" />
@@ -65,7 +65,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="75dp" 
+        android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +75,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="75dp" 
+        android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,7 +85,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="75dp" 
+        android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,7 +95,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="75dp" 
+        android:layout_marginTop="35dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,7 +105,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,7 +115,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,7 +125,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -135,7 +135,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -145,7 +145,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -155,7 +155,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -165,7 +165,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -175,7 +175,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -185,7 +185,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="106dp" 
+        android:layout_marginTop="66dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -194,10 +194,10 @@
 		android:layout_width="34dp"
 		android:layout_height="45dp"
 		android:inputType="number"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
 		android:layout_marginStart="42dp"
-		android:layout_marginTop="137dp" />
+		android:layout_marginTop="97dp" 
+		app:layout_constraintStart_toStartOf="parent" 
+		app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/editTextNumber32"
@@ -205,7 +205,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -215,7 +215,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -225,7 +225,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -235,7 +235,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -245,7 +245,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -255,7 +255,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -265,7 +265,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -275,7 +275,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="137dp" 
+        android:layout_marginTop="97dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -285,7 +285,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -293,10 +293,9 @@
         android:id="@+id/editTextNumber42"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -304,10 +303,9 @@
         android:id="@+id/editTextNumber43"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -315,10 +313,9 @@
         android:id="@+id/editTextNumber44"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -326,10 +323,9 @@
         android:id="@+id/editTextNumber45"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -337,21 +333,19 @@
         android:id="@+id/editTextNumber46"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="179dp" 
-		app:layout_constraintStart_toStartOf="parent" 
+        android:layout_marginTop="139dp"
+		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber47"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -359,10 +353,9 @@
         android:id="@+id/editTextNumber48"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -370,10 +363,9 @@
         android:id="@+id/editTextNumber49"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="179dp" 
+        android:layout_marginTop="139dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -381,10 +373,9 @@
         android:id="@+id/editTextNumber51"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -392,10 +383,9 @@
         android:id="@+id/editTextNumber52"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -403,10 +393,9 @@
         android:id="@+id/editTextNumber53"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -414,10 +403,9 @@
         android:id="@+id/editTextNumber54"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -425,10 +413,9 @@
         android:id="@+id/editTextNumber55"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -436,10 +423,9 @@
         android:id="@+id/editTextNumber56"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -447,10 +433,9 @@
         android:id="@+id/editTextNumber57"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -458,10 +443,9 @@
         android:id="@+id/editTextNumber58"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -469,10 +453,9 @@
         android:id="@+id/editTextNumber59"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="210dp" 
+        android:layout_marginTop="170dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -480,10 +463,9 @@
         android:id="@+id/editTextNumber61"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -491,10 +473,9 @@
         android:id="@+id/editTextNumber62"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -502,10 +483,9 @@
         android:id="@+id/editTextNumber63"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -513,10 +493,9 @@
         android:id="@+id/editTextNumber64"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -524,10 +503,9 @@
         android:id="@+id/editTextNumber65"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -535,10 +513,9 @@
         android:id="@+id/editTextNumber66"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -546,10 +523,9 @@
         android:id="@+id/editTextNumber67"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -557,10 +533,9 @@
         android:id="@+id/editTextNumber68"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -568,10 +543,9 @@
         android:id="@+id/editTextNumber69"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="241dp" 
+        android:layout_marginTop="201dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -579,10 +553,9 @@
         android:id="@+id/editTextNumber71"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -590,10 +563,9 @@
         android:id="@+id/editTextNumber72"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -601,10 +573,9 @@
         android:id="@+id/editTextNumber73"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -612,10 +583,9 @@
         android:id="@+id/editTextNumber74"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -623,10 +593,9 @@
         android:id="@+id/editTextNumber75"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -634,10 +603,9 @@
         android:id="@+id/editTextNumber76"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 		
@@ -645,10 +613,9 @@
         android:id="@+id/editTextNumber77"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -656,10 +623,9 @@
         android:id="@+id/editTextNumber78"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -667,10 +633,9 @@
         android:id="@+id/editTextNumber79"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="287dp" 
+        android:layout_marginTop="247dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -678,10 +643,9 @@
         android:id="@+id/editTextNumber81"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -689,10 +653,9 @@
         android:id="@+id/editTextNumber82"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -700,10 +663,9 @@
         android:id="@+id/editTextNumber83"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -711,10 +673,9 @@
         android:id="@+id/editTextNumber84"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -722,10 +683,9 @@
         android:id="@+id/editTextNumber85"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -733,10 +693,9 @@
         android:id="@+id/editTextNumber86"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -744,10 +703,9 @@
         android:id="@+id/editTextNumber87"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -755,10 +713,9 @@
         android:id="@+id/editTextNumber88"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -766,10 +723,9 @@
         android:id="@+id/editTextNumber89"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="318dp" 
+        android:layout_marginTop="278dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -777,10 +733,9 @@
         android:id="@+id/editTextNumber91"
         android:layout_width="34dp"
         android:layout_height="45dp"
-        android:ems="10"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -788,10 +743,9 @@
         android:id="@+id/editTextNumber92"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -799,10 +753,9 @@
         android:id="@+id/editTextNumber93"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -810,10 +763,9 @@
         android:id="@+id/editTextNumber94"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -821,10 +773,9 @@
         android:id="@+id/editTextNumber95"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -832,10 +783,9 @@
         android:id="@+id/editTextNumber96"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -843,10 +793,9 @@
         android:id="@+id/editTextNumber97"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -854,10 +803,9 @@
         android:id="@+id/editTextNumber98"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -867,7 +815,7 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="349dp" 
+        android:layout_marginTop="309dp" 
 		app:layout_constraintStart_toStartOf="parent" 
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -876,7 +824,7 @@
 		android:layout_width="100dp"
 		android:layout_height="40dp"
 		android:layout_marginStart="160dp"
-		android:layout_marginTop="400dp"
+		android:layout_marginTop="360dp"
 		android:text="Rätta"
 		android:textAlignment="center"
 		android:textSize="16sp"
@@ -888,7 +836,7 @@
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="430dp"
+        android:layout_marginTop="390dp"
         android:onClick="start"
         android:text="Start"
 		app:layout_constraintStart_toStartOf="parent" 
@@ -899,7 +847,7 @@
 		android:layout_width="100dp"
 		android:layout_height="40dp"
 		android:layout_marginStart="160dp"
-		android:layout_marginTop="430dp"
+		android:layout_marginTop="390dp"
 		android:onClick="correct"
 		android:text="Allt"
 		app:layout_constraintStart_toStartOf="parent"
@@ -910,7 +858,7 @@
 		android:layout_width="100dp"
 		android:layout_height="40dp"
 		android:layout_marginStart="280dp"
-		android:layout_marginTop="430dp"
+		android:layout_marginTop="390dp"
 		android:onClick="reset"
 		android:text="Rensa"
 		app:layout_constraintStart_toStartOf="parent"
@@ -921,7 +869,7 @@
 		android:layout_width="100dp"
 		android:layout_height="40dp"
 		android:layout_marginStart="160dp"
-		android:layout_marginTop="470dp"
+		android:layout_marginTop="430dp"
 		android:onClick="correctSquare"
 		android:text="Ruta"
 		app:layout_constraintStart_toStartOf="parent"
