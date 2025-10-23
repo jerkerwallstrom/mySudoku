@@ -182,9 +182,10 @@ public class Sudoku {
     public String CreateSudoku() {
 
         Integer y = 1;
+        Integer yErrorCnt = 0;
         while (y < 10) {
             Integer x = 1;
-            Integer iErrorCnt = 0;
+            Integer xErrorCnt = 0;
             while (x < 10) {
                 Integer[] used = GetUsed(x, y);
                 Integer[] left = GetLeft(used);
@@ -192,24 +193,38 @@ public class Sudoku {
                 if (0 == value) {
                     Integer ibreak = 2;
                     x = x - 1;
-                    iErrorCnt = iErrorCnt + 1;
+                    xErrorCnt = xErrorCnt + 1;
                 } else {
                     matris[y - 1][x - 1] = value;
                     x = x + 1;
                 }
-                if (iErrorCnt > 2) {
+                if (xErrorCnt > 2) {
                     break;
                 }
             }
-            if (iErrorCnt <= 0) {
+            if (xErrorCnt <= 0) {
+                yErrorCnt = 0;
                 y = y + 1;
             } else {
+                yErrorCnt = yErrorCnt + 1;
                 Integer xTmp = 1;
                 while (xTmp < 10) {
                     matris[y - 1][xTmp - 1] = -1;
                     xTmp = xTmp + 1;
                 }
             }
+            if (yErrorCnt > 9) {
+                yErrorCnt = 0;
+                if (y > 1) {
+                    y = y - 1;
+                }
+                Integer xTmp = 1;
+                while (xTmp < 10) {
+                    matris[y - 1][xTmp - 1] = -1;
+                    xTmp = xTmp + 1;
+                }
+            }
+
         }
 
         String szString = "";

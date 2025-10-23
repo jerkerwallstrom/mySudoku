@@ -862,11 +862,22 @@
         android:id="@+id/editTextNumber99"
         android:layout_width="34dp"
         android:layout_height="45dp"
-
         android:inputType="number"
         android:layout_marginStart="335dp"
         android:layout_marginTop="349dp" 
 		app:layout_constraintStart_toStartOf="parent" 
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/editTextCorrect"
+		android:layout_width="100dp"
+		android:layout_height="40dp"
+		android:layout_marginStart="160dp"
+		android:layout_marginTop="400dp"
+		android:text="Rätta"
+		android:textAlignment="center"
+		android:textSize="16sp"
+		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<Button
@@ -874,7 +885,7 @@
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="430dp"
         android:onClick="start"
         android:text="Start"
 		app:layout_constraintStart_toStartOf="parent" 
@@ -885,9 +896,9 @@
 		android:layout_width="100dp"
 		android:layout_height="40dp"
 		android:layout_marginStart="160dp"
-		android:layout_marginTop="420dp"
+		android:layout_marginTop="430dp"
 		android:onClick="correct"
-		android:text="Rätta"
+		android:text="Allt"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
@@ -896,10 +907,22 @@
 		android:layout_width="100dp"
 		android:layout_height="40dp"
 		android:layout_marginStart="280dp"
-		android:layout_marginTop="420dp"
+		android:layout_marginTop="430dp"
 		android:onClick="reset"
 		android:text="Rensa"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
+
+	<Button
+		android:id="@+id/btnCorrectSquare"
+		android:layout_width="100dp"
+		android:layout_height="40dp"
+		android:layout_marginStart="160dp"
+		android:layout_marginTop="470dp"
+		android:onClick="correctSquare"
+		android:text="Ruta"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

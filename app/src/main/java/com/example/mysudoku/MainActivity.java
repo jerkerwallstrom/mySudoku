@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         {null, null, null, null, null, null, null, null, null}
     };
 
+    private Integer selectedX = -1;
+    private Integer selectedY = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,11 +144,30 @@ public class MainActivity extends AppCompatActivity {
         playingField[y - 1][x - 1] = valueText;
     }
 
+    private EditText GetSelected() {
+        selectedX = -1;
+        selectedY = -1;
+        for (Integer y = 1; y <= 9; y++) {
+            for (Integer x = 1; x <= 9; x++) {
+                EditText selected = playingField[y-1][x-1];
+                if (selected.hasFocus())
+                {
+                    selectedX = x;
+                    selectedY = y;
+                    return selected;
+                }
+            }
+        }
+        return null;
+    }
+
     public void start(View view) {
         starting();
     }
     public void correct(View view) { correcting();  }
     public void reset(View view) { reseting();  }
+
+    public void correctSquare(View view) { correctSquareFocused();  }
 
     private void starting() {
         mySudoku.Reset();
@@ -184,7 +206,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void CorrectField(Integer x, Integer y) {
+    private boolean CorrectField(Integer x, Integer y) {
+        boolean res = true;
         EditText valueText = playingField[y-1][x-1];
         String input = valueText.getText().toString().trim();
         Integer test = mySudoku.matris[y - 1][x - 1];
@@ -192,8 +215,20 @@ public class MainActivity extends AppCompatActivity {
             String szValue = input + "(" + Integer.toString(test) + ")";
             valueText.setTextColor(Color.RED);
             valueText.setText(szValue);
+            res = false;
         }
         valueText.clearFocus();
+        return res;
+
+    }
+    private void correctSquareFocused() {
+        EditText selected = GetSelected();
+        if (selected != null)
+        {
+            if (CorrectField(selectedX, selectedY) ) {
+                selected.setTextColor(Color.GREEN);
+            }
+        }
 
     }
     private void reseting() {
