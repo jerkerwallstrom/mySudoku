@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import android.os.CountDownTimer;
@@ -141,6 +143,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void SetupPlayingField(EditText valueText, Integer x, Integer y) {
+        valueText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                                               @Override
+                                               public void onFocusChange(View v, boolean hasFocus) {
+                                                   if (hasFocus){
+                                                       valueText.setTextColor(Color.GRAY);
+                                                   }
+
+                                               }
+                                           });
         playingField[y - 1][x - 1] = valueText;
     }
 
@@ -209,10 +220,21 @@ public class MainActivity extends AppCompatActivity {
     private boolean CorrectField(Integer x, Integer y) {
         boolean res = true;
         EditText valueText = playingField[y-1][x-1];
-        String input = valueText.getText().toString().trim();
+        String szInput = valueText.getText().toString().trim();
+        Integer iInput = -1;
+        try {
+            iInput = Integer.parseInt(szInput);
+        }
+        catch(Exception e) {
+
+        }
         Integer test = mySudoku.matris[y - 1][x - 1];
-        if (input.length() <= 0 || test != Integer.parseInt(input)) {
-            String szValue = input + "(" + Integer.toString(test) + ")";
+        //if (szInput.length() <= 0 || test != Integer.parseInt(szInput)) {
+        if (test != iInput) {
+            if (iInput == -1) {
+                szInput = "";
+            }
+            String szValue = szInput + "(" + Integer.toString(test) + ")";
             valueText.setTextColor(Color.RED);
             valueText.setText(szValue);
             res = false;
