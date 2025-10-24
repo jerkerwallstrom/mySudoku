@@ -875,5 +875,15 @@
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent" />
 
+	<Button
+		android:id="@+id/btnDebug"
+		android:layout_width="100dp"
+		android:layout_height="40dp"
+		android:layout_marginStart="32dp"
+		android:layout_marginTop="430dp"
+		android:onClick="debug"
+		android:text="Debug"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

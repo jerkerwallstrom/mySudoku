@@ -180,6 +180,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void correctSquare(View view) { correctSquareFocused();  }
 
+    public void debug(View view) { debugging(); }
+
     private void starting() {
         mySudoku.Reset();
         String szSudoku = mySudoku.GetPresentation();
@@ -265,6 +267,20 @@ public class MainActivity extends AppCompatActivity {
                 SetValue(x, y);
             }
         }
+    }
+
+    private void debugging() {
+        mySudoku.debug();
+        for (Integer y = 1; y <= 9; y++) {
+            for (Integer x = 1; x <= 9; x++) {
+                String szValue = mySudoku.GetDebugCellValue(x, y);
+                EditText valueText = playingField[y-1][x-1];
+                valueText.setTextColor(Color.MAGENTA);
+                valueText.setText(szValue);
+                valueText.clearFocus();
+            }
+        }
+
     }
 
 }

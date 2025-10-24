@@ -1,7 +1,6 @@
 package com.example.mysudoku;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -30,6 +29,18 @@ public class Sudoku {
             {-1, -1, -1, -1, -1, -1, -1, -1, -1},
             {-1, -1, -1, -1, -1, -1, -1, -1, -1}
     };
+    public CellInformation[][] playingField = {
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null}
+    };
+    public Integer[][] solution = GetEmptyMatris();
     public String szPres = "";
 
     private Integer cRows = 9;
@@ -38,6 +49,20 @@ public class Sudoku {
     private Integer cSqY = 3;
     private Integer cSquares = 9;
 
+    private Integer[][] GetEmptyMatris() {
+        Integer[][] tmp = {
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+                {-1, -1, -1, -1, -1, -1, -1, -1, -1}
+        };
+        return tmp;
+    };
     private Integer GetRandomValue(Integer[] left) {
         if (left.length <= 0) {
             return 0;
@@ -101,10 +126,10 @@ public class Sudoku {
         return simpleArray;
     }
 
-    private Integer[] GetUsed(Integer xRow, Integer yCol) {
+    private Integer[] GetUsed(Integer xRow, Integer yCol, Integer[][] tmpMatris) {
         List<Integer> used = new ArrayList<Integer>();
         for (Integer x = 0; x < cRows; x++) {
-            Integer v = matris[yCol - 1][x];
+            Integer v = tmpMatris[yCol - 1][x];
             if (v > 0) {
                 if (Collections.frequency(used, v) <= 0) {
                     used.add(v);
@@ -113,7 +138,7 @@ public class Sudoku {
         }
         for (Integer y = 0; y < cCols; y++) {
 
-            Integer v = matris[y][xRow - 1];
+            Integer v = tmpMatris[y][xRow - 1];
             if (v > 0) {
                 if (Collections.frequency(used, v) <= 0) {
                     used.add(v);
@@ -167,7 +192,7 @@ public class Sudoku {
         for (Integer y = sqYmin - 1; y < sqYmin + 2; y++) {
             for (Integer x = sqXmin - 1; x < sqXmin + 2; x++) {
 
-                Integer v = matris[y][x];
+                Integer v = tmpMatris[y][x];
 
                 if ((v > 0) && (Collections.frequency(used, v) <= 0)) {
                     used.add(v);
@@ -187,7 +212,7 @@ public class Sudoku {
             Integer x = 1;
             Integer xErrorCnt = 0;
             while (x < 10) {
-                Integer[] used = GetUsed(x, y);
+                Integer[] used = GetUsed(x, y, matris);
                 Integer[] left = GetLeft(used);
                 Integer value = GetRandomValue(left);
                 if (0 == value) {
@@ -283,6 +308,13 @@ public class Sudoku {
     public String GetPresentation() {
         facit = CreateSudoku();
         szPres = SetPresentation();
+        SetupReduntantSolutions();
+        //TBD
+        //boolean reduncancy = true;
+        //while (reduncancy){
+        //    reduncancy = ReduntantSolutions();
+        //}
+
         return szPres;
     }
 
@@ -292,6 +324,136 @@ public class Sudoku {
                 matris[y-1][x-1] = -1;
             }
         }
+    }
+
+    private void SetupReduntantSolutions() {
+        for (Integer y = 1; y <= cCols; y++) {
+            for (Integer x = 1; x <= cRows; x++) {
+                solution[y - 1][x - 1] = matrisPresentation[y - 1][x - 1];
+            }
+        }
+        for (Integer y = 1; y <= cCols; y++){
+            for (Integer x = 1; x<= cRows; x++) {
+                CellInformation cell = new CellInformation(x, y, solution[y-1][x-1]);
+                playingField[y-1][x-1] = cell;
+            }
+        }
+    }
+    public void debug() {
+        //Check (not ready yet)
+        if (ReduntantSolutions()) {
+            //TBD
+        }
+
+    }
+
+    public String GetDebugCellValue(Integer x, Integer y) {
+        CellInformation cell = playingField[y-1][x-1];
+        if (cell != null) {
+            return cell.GetDebugValue();
+        }
+        else
+        {
+            return "Nope";
+        }
+
+    }
+
+    private void SearchForAloneNumbersRows(){
+        for(Integer y = 1; y <= cCols; y++) {
+            List<CellInformation> tmpCells = new ArrayList<CellInformation>();
+            for(Integer x = 1; x <= cRows; x++) {
+                CellInformation cell = playingField[y-1][x-1];
+                tmpCells.add(cell);
+            }
+            for (int i = 1; i <= 9; i++) {
+                Integer cnt = 0;
+                for (CellInformation c: tmpCells) {
+                    if (!c.satisfied && c.Contains(i))
+                    {
+                        cnt++;
+                    }
+                }
+                if (1 == cnt) {
+                    for (CellInformation c: tmpCells) {
+                        if (!c.satisfied && c.Contains(i))
+                        {
+                            c.myValue = i;
+                            c.satisfied = true;
+                            c.ClearAvailable();
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private void SearchForAloneNumbersCols() {
+        //TBD
+    }
+
+    private boolean ReduntantSolutions() {
+        //Setup preconditions
+        boolean noSolution = true;
+
+       Integer solutionCnt = 0;
+       while (noSolution && solutionCnt < 20) {
+           for (Integer y = 1; y <= cCols; y++){
+               for (Integer x = 1; x<= cRows; x++) {
+                   CellInformation cell = playingField[y-1][x-1];
+                   if (!cell.satisfied) {
+                       Integer[] used = GetUsed(x, y, solution);
+                       if (!cell.UpdateAvailableFromUsed(used)){
+                           int ibrek = cell.iError;
+                       }
+                       if (cell.satisfied) {
+                           solution[y-1][x-1] = cell.myValue;
+                       }
+                   }
+               }
+           }
+           solutionCnt++;
+       }
+
+       SearchForAloneNumbersRows();
+       SearchForAloneNumbersCols();
+       //Check if all fields satisfied!
+        boolean allSatisfied = true;
+        for (Integer y = 1; y <= cCols; y++){
+            for (Integer x = 1; x<= cRows; x++) {
+                CellInformation cell = playingField[y - 1][x - 1];
+                if (!cell.satisfied) {
+                    allSatisfied = false;
+                }
+            }
+        }
+        if (allSatisfied) {
+            return false;
+        }
+
+       //Check for not satisfied but missing equals
+        List<CellInformation> tmpCells = new ArrayList<CellInformation>();
+       for (Integer y = 1; y <= cCols; y++){
+           for (Integer x = 1; x<= cRows; x++) {
+               CellInformation cell = playingField[y - 1][x - 1];
+               if (cell.HasTwoLeft()) {
+                   tmpCells.add(cell);
+               }
+           }
+       }
+       if (tmpCells.size()>=4)
+       {
+           boolean tmpV = true;
+           for(CellInformation cell : tmpCells){
+               if (tmpV) {
+                   Integer x = cell.xPos;
+                   Integer y = cell.yPos;
+                   matrisPresentation[y - 1][x - 1] = matris[y - 1][x - 1];
+               }
+               tmpV = !tmpV;
+           }
+           return true;
+       }
+       return true;
     }
 
 }
