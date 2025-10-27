@@ -1,38 +1,30 @@
 package com.example.mysudoku;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.widget.EditText;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.widget.EditText;
 
-import android.os.CountDownTimer;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.Timer;
-import java.util.TimerTask;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
     private Sudoku mySudoku;
 
     private EditText[][] playingField= {
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null, null}
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null, null, null}
     };
 
     private Integer selectedX = -1;
@@ -41,12 +33,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
         EditText valueText = (EditText) findViewById(R.id.editTextNumber11);
         valueText.setText("0");
         valueText.clearFocus();
         mySudoku = new Sudoku();
         InitPlayingField();
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
     }
 
     private void InitPlayingField() {
@@ -144,14 +144,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void SetupPlayingField(EditText valueText, Integer x, Integer y) {
         valueText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                                               @Override
-                                               public void onFocusChange(View v, boolean hasFocus) {
-                                                   if (hasFocus){
-                                                       valueText.setTextColor(Color.GRAY);
-                                                   }
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus){
+                    valueText.setTextColor(Color.GRAY);
+                }
 
-                                               }
-                                           });
+            }
+        });
         playingField[y - 1][x - 1] = valueText;
     }
 

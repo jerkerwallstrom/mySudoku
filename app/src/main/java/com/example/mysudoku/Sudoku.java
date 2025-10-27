@@ -1,4 +1,5 @@
 package com.example.mysudoku;
+//package com.example.mysudoku;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -395,28 +396,28 @@ public class Sudoku {
         //Setup preconditions
         boolean noSolution = true;
 
-       Integer solutionCnt = 0;
-       while (noSolution && solutionCnt < 20) {
-           for (Integer y = 1; y <= cCols; y++){
-               for (Integer x = 1; x<= cRows; x++) {
-                   CellInformation cell = playingField[y-1][x-1];
-                   if (!cell.satisfied) {
-                       Integer[] used = GetUsed(x, y, solution);
-                       if (!cell.UpdateAvailableFromUsed(used)){
-                           int ibrek = cell.iError;
-                       }
-                       if (cell.satisfied) {
-                           solution[y-1][x-1] = cell.myValue;
-                       }
-                   }
-               }
-           }
-           solutionCnt++;
-       }
+        Integer solutionCnt = 0;
+        while (noSolution && solutionCnt < 20) {
+            for (Integer y = 1; y <= cCols; y++){
+                for (Integer x = 1; x<= cRows; x++) {
+                    CellInformation cell = playingField[y-1][x-1];
+                    if (!cell.satisfied) {
+                        Integer[] used = GetUsed(x, y, solution);
+                        if (!cell.UpdateAvailableFromUsed(used)){
+                            int ibrek = cell.iError;
+                        }
+                        if (cell.satisfied) {
+                            solution[y-1][x-1] = cell.myValue;
+                        }
+                    }
+                }
+            }
+            solutionCnt++;
+        }
 
-       SearchForAloneNumbersRows();
-       SearchForAloneNumbersCols();
-       //Check if all fields satisfied!
+        SearchForAloneNumbersRows();
+        SearchForAloneNumbersCols();
+        //Check if all fields satisfied!
         boolean allSatisfied = true;
         for (Integer y = 1; y <= cCols; y++){
             for (Integer x = 1; x<= cRows; x++) {
@@ -430,30 +431,30 @@ public class Sudoku {
             return false;
         }
 
-       //Check for not satisfied but missing equals
+        //Check for not satisfied but missing equals
         List<CellInformation> tmpCells = new ArrayList<CellInformation>();
-       for (Integer y = 1; y <= cCols; y++){
-           for (Integer x = 1; x<= cRows; x++) {
-               CellInformation cell = playingField[y - 1][x - 1];
-               if (cell.HasTwoLeft()) {
-                   tmpCells.add(cell);
-               }
-           }
-       }
-       if (tmpCells.size()>=4)
-       {
-           boolean tmpV = true;
-           for(CellInformation cell : tmpCells){
-               if (tmpV) {
-                   Integer x = cell.xPos;
-                   Integer y = cell.yPos;
-                   matrisPresentation[y - 1][x - 1] = matris[y - 1][x - 1];
-               }
-               tmpV = !tmpV;
-           }
-           return true;
-       }
-       return true;
+        for (Integer y = 1; y <= cCols; y++){
+            for (Integer x = 1; x<= cRows; x++) {
+                CellInformation cell = playingField[y - 1][x - 1];
+                if (cell.HasTwoLeft()) {
+                    tmpCells.add(cell);
+                }
+            }
+        }
+        if (tmpCells.size()>=4)
+        {
+            boolean tmpV = true;
+            for(CellInformation cell : tmpCells){
+                if (tmpV) {
+                    Integer x = cell.xPos;
+                    Integer y = cell.yPos;
+                    matrisPresentation[y - 1][x - 1] = matris[y - 1][x - 1];
+                }
+                tmpV = !tmpV;
+            }
+            return true;
+        }
+        return true;
     }
 
 }
