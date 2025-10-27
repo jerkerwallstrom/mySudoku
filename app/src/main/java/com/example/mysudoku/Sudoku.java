@@ -42,6 +42,7 @@ public class Sudoku {
             {null, null, null, null, null, null, null, null, null}
     };
     public Integer[][] solution = GetEmptyMatris();
+    private Integer myLevel = 2;
     public String szPres = "";
 
     private Integer cRows = 9;
@@ -276,12 +277,15 @@ public class Sudoku {
 
     private String SetPresentation()
     {
+        if (myLevel < 1) myLevel = 1;
+        if (myLevel > 3) myLevel = 3;
         for (Integer y = 1; y <= cCols; y++) {
             for(Integer x = 1; x <= cRows; x++)  {
                 Integer value = matris[y-1][x-1];
-                int rnd = (int)(Math.random() * 2);
-                if (rnd==0)
+                int rnd = (int)(Math.random() * (myLevel + 1));
+                if (rnd != 0) {
                     value = 0;
+                }
                 matrisPresentation[y-1][x-1] = value;
             }
         }
@@ -306,14 +310,33 @@ public class Sudoku {
         return szString;
     }
 
+    public Integer SetLevel(String szLevel){
+        Integer level = 2;
+        if (szLevel.equals("Lätt")) {
+            level = 1;
+        }
+        else if (szLevel.equals("Medel")) {
+            level = 2;
+        }
+        else if (szLevel.equals("Svår")) {
+            level = 3;
+        }
+        myLevel = level;
+        return level;
+    }
     public String GetPresentation() {
         facit = CreateSudoku();
         szPres = SetPresentation();
         SetupReduntantSolutions();
         //TBD
         boolean reduncancy = true;
+        int loopCnt = 0;
         while (reduncancy){
             reduncancy = ReduntantSolutions();
+            loopCnt++;
+            if (loopCnt > 20) {
+                break;
+            }
         }
 
         return szPres;

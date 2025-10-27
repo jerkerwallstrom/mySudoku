@@ -2,8 +2,11 @@ package com.example.mysudoku;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
     private Integer selectedX = -1;
     private Integer selectedY = -1;
 
+    ListView listView;
+    String tutorials[] = { "Lätt",
+            "Medel",
+            "Svår" };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Spinner spinner = findViewById(R.id.my_spinner_view);
+        ArrayAdapter<String> arr;
+
+        arr = new ArrayAdapter<String>(this,
+                R.layout.support_simple_spinner_dropdown_item,tutorials);
+        spinner.setAdapter(arr);
     }
 
     private void InitPlayingField() {
@@ -183,7 +198,11 @@ public class MainActivity extends AppCompatActivity {
     public void debug(View view) { debugging(); }
 
     private void starting() {
+        Spinner spinner = (Spinner) findViewById(R.id.my_spinner_view);
+        String text = spinner.getSelectedItem().toString();
+
         mySudoku.Reset();
+        mySudoku.SetLevel(text);
         String szSudoku = mySudoku.GetPresentation();
         SetupField();
     }
