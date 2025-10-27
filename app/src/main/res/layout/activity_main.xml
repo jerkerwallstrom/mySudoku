@@ -2,41 +2,42 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-	<EditText
-		android:id="@+id/editTextNumber11"
-		android:layout_width="34dp"
-		android:layout_height="45dp"
-		android:layout_marginStart="42dp"
-		android:layout_marginTop="35dp" 
-		android:inputType="number"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		android:imeOptions="actionDone" />
+    <EditText
+        android:id="@+id/editTextNumber11"
+        android:layout_width="34dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="35dp"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:imeOptions="actionDone" />
 
     <EditText
         android:id="@+id/editTextNumber12"
         android:layout_width="34dp"
         android:layout_height="45dp"
         android:inputType="number"
-		android:layout_marginStart="76dp"
-		android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber13"
         android:layout_width="34dp"
         android:layout_height="45dp"
         android:inputType="number"
-		android:layout_marginStart="110dp"
-        android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent"
-		android:imeOptions="actionDone" />
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:imeOptions="actionDone" />
 
     <EditText
         android:id="@+id/editTextNumber14"
@@ -44,9 +45,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber15"
@@ -54,10 +55,10 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent"
-		android:imeOptions="actionDone" />
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:imeOptions="actionDone" />
 
     <EditText
         android:id="@+id/editTextNumber16"
@@ -65,9 +66,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber17"
@@ -75,9 +76,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber18"
@@ -85,9 +86,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber19"
@@ -95,9 +96,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="35dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber21"
@@ -105,9 +106,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber22"
@@ -115,9 +116,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber23"
@@ -125,9 +126,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber24"
@@ -135,9 +136,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber25"
@@ -145,9 +146,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber26"
@@ -155,9 +156,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber27"
@@ -165,9 +166,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber28"
@@ -175,9 +176,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber29"
@@ -185,19 +186,19 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="66dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-	<EditText
-		android:id="@+id/editTextNumber31"
-		android:layout_width="34dp"
-		android:layout_height="45dp"
-		android:inputType="number"
-		android:layout_marginStart="42dp"
-		android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent"/>
+    <EditText
+        android:id="@+id/editTextNumber31"
+        android:layout_width="34dp"
+        android:layout_height="45dp"
+        android:inputType="number"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/editTextNumber32"
@@ -205,9 +206,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber33"
@@ -215,9 +216,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber34"
@@ -225,9 +226,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber35"
@@ -235,9 +236,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber36"
@@ -245,9 +246,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber37"
@@ -255,9 +256,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber38"
@@ -265,9 +266,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber39"
@@ -275,9 +276,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="97dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="97dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber41"
@@ -285,9 +286,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber42"
@@ -295,9 +296,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber43"
@@ -305,9 +306,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber44"
@@ -315,9 +316,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber45"
@@ -325,9 +326,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber46"
@@ -336,8 +337,8 @@
         android:inputType="number"
         android:layout_marginStart="222dp"
         android:layout_marginTop="139dp"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber47"
@@ -345,9 +346,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber48"
@@ -355,9 +356,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber49"
@@ -365,9 +366,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="139dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="139dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber51"
@@ -375,9 +376,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber52"
@@ -385,9 +386,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber53"
@@ -395,9 +396,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber54"
@@ -405,9 +406,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber55"
@@ -415,9 +416,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber56"
@@ -425,9 +426,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber57"
@@ -435,9 +436,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber58"
@@ -445,9 +446,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber59"
@@ -455,9 +456,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="170dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber61"
@@ -465,9 +466,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber62"
@@ -475,9 +476,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber63"
@@ -485,9 +486,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber64"
@@ -495,9 +496,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber65"
@@ -505,9 +506,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber66"
@@ -515,9 +516,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber67"
@@ -525,9 +526,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber68"
@@ -535,9 +536,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber69"
@@ -545,9 +546,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="201dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="201dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber71"
@@ -555,9 +556,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber72"
@@ -565,9 +566,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber73"
@@ -575,9 +576,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber74"
@@ -585,9 +586,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber75"
@@ -595,9 +596,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber76"
@@ -605,19 +606,19 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
-		
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/editTextNumber77"
         android:layout_width="34dp"
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber78"
@@ -625,9 +626,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber79"
@@ -635,9 +636,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="247dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="247dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber81"
@@ -645,9 +646,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber82"
@@ -655,9 +656,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber83"
@@ -665,9 +666,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber84"
@@ -675,9 +676,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber85"
@@ -685,9 +686,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber86"
@@ -695,9 +696,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber87"
@@ -705,9 +706,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber88"
@@ -715,9 +716,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber89"
@@ -725,9 +726,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="278dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="278dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber91"
@@ -735,9 +736,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="42dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber92"
@@ -745,9 +746,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber93"
@@ -755,9 +756,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber94"
@@ -765,9 +766,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber95"
@@ -775,9 +776,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="188dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber96"
@@ -785,9 +786,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="222dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber97"
@@ -795,9 +796,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="267dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber98"
@@ -805,9 +806,9 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="301dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber99"
@@ -815,23 +816,23 @@
         android:layout_height="45dp"
         android:inputType="number"
         android:layout_marginStart="335dp"
-        android:layout_marginTop="309dp" 
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="309dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-	<TextView
-		android:id="@+id/editTextCorrect"
-		android:layout_width="100dp"
-		android:layout_height="40dp"
-		android:layout_marginStart="160dp"
-		android:layout_marginTop="360dp"
-		android:text="Rätta"
-		android:textAlignment="center"
-		android:textSize="16sp"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/editTextCorrect"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="360dp"
+        android:text="Rätta"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-	<Button
+    <Button
         android:id="@+id/btnStart"
         android:layout_width="100dp"
         android:layout_height="40dp"
@@ -839,51 +840,51 @@
         android:layout_marginTop="390dp"
         android:onClick="start"
         android:text="Start"
-		app:layout_constraintStart_toStartOf="parent" 
-		app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-	<Button
-		android:id="@+id/btnCorrect"
-		android:layout_width="100dp"
-		android:layout_height="40dp"
-		android:layout_marginStart="160dp"
-		android:layout_marginTop="390dp"
-		android:onClick="correct"
-		android:text="Allt"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnCorrect"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="390dp"
+        android:onClick="correct"
+        android:text="Allt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-	<Button
-		android:id="@+id/btnReset"
-		android:layout_width="100dp"
-		android:layout_height="40dp"
-		android:layout_marginStart="280dp"
-		android:layout_marginTop="390dp"
-		android:onClick="reset"
-		android:text="Rensa"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="390dp"
+        android:onClick="reset"
+        android:text="Rensa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-	<Button
-		android:id="@+id/btnCorrectSquare"
-		android:layout_width="100dp"
-		android:layout_height="40dp"
-		android:layout_marginStart="160dp"
-		android:layout_marginTop="430dp"
-		android:onClick="correctSquare"
-		android:text="Ruta"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnCorrectSquare"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="430dp"
+        android:onClick="correctSquare"
+        android:text="Ruta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-	<Button
-		android:id="@+id/btnDebug"
-		android:layout_width="100dp"
-		android:layout_height="40dp"
-		android:layout_marginStart="32dp"
-		android:layout_marginTop="430dp"
-		android:onClick="debug"
-		android:text="Debug"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnDebug"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="430dp"
+        android:onClick="debug"
+        android:text="Debug"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
