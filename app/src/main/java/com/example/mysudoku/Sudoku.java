@@ -311,10 +311,10 @@ public class Sudoku {
         szPres = SetPresentation();
         SetupReduntantSolutions();
         //TBD
-        //boolean reduncancy = true;
-        //while (reduncancy){
-        //    reduncancy = ReduntantSolutions();
-        //}
+        boolean reduncancy = true;
+        while (reduncancy){
+            reduncancy = ReduntantSolutions();
+        }
 
         return szPres;
     }
@@ -449,6 +449,15 @@ public class Sudoku {
                     Integer x = cell.xPos;
                     Integer y = cell.yPos;
                     matrisPresentation[y - 1][x - 1] = matris[y - 1][x - 1];
+                    cell.satisfied = true;
+                    cell.myValue = matris[y - 1][x - 1];
+                    cell.ClearAvailable();
+
+                    CellInformation tmpTest = playingField[y - 1][x - 1];
+                    if (tmpTest.satisfied == false){
+                        int iBreak = 101;
+                    }
+
                 }
                 tmpV = !tmpV;
             }

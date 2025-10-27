@@ -3,17 +3,13 @@ plugins {
 }
 
 android {
-<<<<<<< Updated upstream
-    namespace 'com.example.testapp2'
-=======
     namespace 'com.example.mysudoku'
->>>>>>> Stashed changes
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId "com.example.testapp2"
+        applicationId "com.example.mysudoku"
         minSdk 24
         targetSdk 36
         versionCode 1

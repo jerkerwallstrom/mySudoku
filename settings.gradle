@@ -19,9 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-<<<<<<< Updated upstream
-rootProject.name = "Test App2"
-=======
 rootProject.name = "mySudoku"
->>>>>>> Stashed changes
 include ':app'
