@@ -282,8 +282,11 @@ public class Sudoku {
         for (Integer y = 1; y <= cCols; y++) {
             for(Integer x = 1; x <= cRows; x++)  {
                 Integer value = matris[y-1][x-1];
-                int rnd = (int)(Math.random() * (myLevel + 1));
-                if (rnd != 0) {
+
+                //Filtrera bort slumpmässigt i matrisen som skall presenteras till spelaren
+                //Ger Lätt 50% att visa, Medel 42% och svår 38%
+                int rnd = (int)(Math.random() * (myLevel + 5));
+                if (rnd > 2) {
                     value = 0;
                 }
                 matrisPresentation[y-1][x-1] = value;
@@ -390,7 +393,7 @@ public class Sudoku {
                 CellInformation cell = playingField[y-1][x-1];
                 tmpCells.add(cell);
             }
-            for (int i = 1; i <= 9; i++) {
+            for (Integer i = 1; i <= 9; i++) {
                 Integer cnt = 0;
                 for (CellInformation c: tmpCells) {
                     if (!c.satisfied && c.Contains(i))
@@ -412,7 +415,32 @@ public class Sudoku {
         }
     }
     private void SearchForAloneNumbersCols() {
-        //TBD
+        for(Integer x = 1; x <= cRows; x++) {
+            List<CellInformation> tmpCells = new ArrayList<CellInformation>();
+            for(Integer y = 1; y <= cCols; y++) {
+                CellInformation cell = playingField[y-1][x-1];
+                tmpCells.add(cell);
+            }
+            for (Integer i = 1; i <= 9; i++) {
+                Integer cnt = 0;
+                for (CellInformation c: tmpCells) {
+                    if (!c.satisfied && c.Contains(i))
+                    {
+                        cnt++;
+                    }
+                }
+                if (1 == cnt) {
+                    for (CellInformation c: tmpCells) {
+                        if (!c.satisfied && c.Contains(i))
+                        {
+                            c.myValue = i;
+                            c.satisfied = true;
+                            c.ClearAvailable();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private boolean ReduntantSolutions() {

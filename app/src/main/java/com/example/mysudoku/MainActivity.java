@@ -1,7 +1,9 @@
 package com.example.mysudoku;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.view.View;
@@ -62,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
         arr = new ArrayAdapter<String>(this,
                 R.layout.support_simple_spinner_dropdown_item,tutorials);
         spinner.setAdapter(arr);
+        SpinnerActivity spinnerActivity = new SpinnerActivity();
+
+        spinner.setOnItemSelectedListener(spinnerActivity);
     }
 
     private void InitPlayingField() {
@@ -300,6 +305,21 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+    public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view,
+                                   int pos, long id) {
+            // An item is selected. You can retrieve the selected item using
+            // parent.getItemAtPosition(pos).
+            int ibreak = 4;
+            String text = parent.getItemAtPosition(pos).toString();
+            mySudoku.SetLevel(text);
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Another interface callback.
+        }
     }
 
 }
