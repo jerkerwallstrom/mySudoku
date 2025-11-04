@@ -1,35 +1,15 @@
 package com.example.mysudoku;
-//package com.example.mysudoku;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Sudoku {
 
-    public Integer[][] matris = {
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1}
-    };
+    public Integer[][] matris = GetEmptyMatris();
     public String facit = "";
-    public Integer[][] matrisPresentation = {
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1}
-    };
+    public Integer[][] matrisPresentation = GetEmptyMatris();
     public CellInformation[][] playingField = {
             {null, null, null, null, null, null, null, null, null},
             {null, null, null, null, null, null, null, null, null},
@@ -42,6 +22,10 @@ public class Sudoku {
             {null, null, null, null, null, null, null, null, null}
     };
     public Integer[][] solution = GetEmptyMatris();
+    public Integer[][] testMatris = GetEmptyMatris();
+
+    public Integer[][] debugMatris = GetEmptyMatris();
+
     private Integer myLevel = 2;
     public String szPres = "";
 
@@ -51,6 +35,14 @@ public class Sudoku {
     private Integer cSqY = 3;
     private Integer cSquares = 9;
 
+    private Integer N = 9;
+    private Integer BOX = 3;
+
+    public Integer GetMyLevel() {
+        if (myLevel < 1) myLevel = 1;
+        if (myLevel > 3) myLevel = 3;
+        return myLevel;
+    }
     private Integer[][] GetEmptyMatris() {
         Integer[][] tmp = {
                 {-1, -1, -1, -1, -1, -1, -1, -1, -1},
@@ -72,47 +64,6 @@ public class Sudoku {
             int rnd = (int)(Math.random() * (left.length));
             return left[rnd];
         }
-    }
-
-    private int GetSquare(Integer x, Integer y) {
-        Integer square = 0;
-        Integer sqX = 0;
-        switch (x) {
-            case 1: case 2: case 3:
-                sqX = 1;
-                break;
-            case 4: case 5: case 6:
-                sqX = 2;
-                break;
-            case 7: case 8: case 9:
-                sqX = 3;
-                break;
-        }
-        Integer sqY = 0;
-        switch (y) {
-            case 1: case 2: case 3:
-                sqY = 1;
-                break;
-            case 4: case 5: case 6:
-                sqY = 2;
-                break;
-            case 7: case 8: case 9:
-                sqY = 3;
-                break;
-        }
-
-        switch (sqY) {
-            case 1:
-                square = sqX;
-                break;
-            case 2:
-                square = sqX + 3;
-                break;
-            case 3:
-                square = sqX + 6;
-                break;
-        }
-        return square;
     }
 
     private Integer[] GetLeft(Integer[] used) {
@@ -148,49 +99,8 @@ public class Sudoku {
             }
         }
         // GetUsed in Square
-        // Get square
-        Integer square = GetSquare(xRow, yCol);
-
-        Integer sqXmin = 0;
-        Integer sqYmin = 0;
-        switch (square) {
-            case 1:
-                sqXmin = 1;
-                sqYmin = 1;
-                break;
-            case 2:
-                sqXmin = 4;
-                sqYmin = 1;
-                break;
-            case 3:
-                sqXmin = 7;
-                sqYmin = 1;
-                break;
-            case 4:
-                sqXmin = 1;
-                sqYmin = 4;
-                break;
-            case 5:
-                sqXmin = 4;
-                sqYmin = 4;
-                break;
-            case 6:
-                sqXmin = 7;
-                sqYmin = 4;
-                break;
-            case 7:
-                sqXmin = 1;
-                sqYmin = 7;
-                break;
-            case 8:
-                sqXmin = 4;
-                sqYmin = 7;
-                break;
-            case 9:
-                sqXmin = 7;
-                sqYmin = 7;
-                break;
-        }
+        Integer sqYmin = (BOX * ((yCol - 1) / BOX)) + 1;
+        Integer sqXmin = (BOX * ((xRow - 1) / BOX)) + 1;
         for (Integer y = sqYmin - 1; y < sqYmin + 2; y++) {
             for (Integer x = sqXmin - 1; x < sqXmin + 2; x++) {
 
@@ -275,23 +185,8 @@ public class Sudoku {
         return szString;
     }
 
-    private String SetPresentation()
-    {
-        if (myLevel < 1) myLevel = 1;
-        if (myLevel > 3) myLevel = 3;
-        for (Integer y = 1; y <= cCols; y++) {
-            for(Integer x = 1; x <= cRows; x++)  {
-                Integer value = matris[y-1][x-1];
+    private String MatrisPresentation() {
 
-                //Filtrera bort slumpmässigt i matrisen som skall presenteras till spelaren
-                //Ger Lätt 50% att visa, Medel 42% och svår 38%
-                int rnd = (int)(Math.random() * (myLevel + 5));
-                if (rnd > 2) {
-                    value = 0;
-                }
-                matrisPresentation[y-1][x-1] = value;
-            }
-        }
         String szString = "";
         for (Integer y = 1; y <=  cCols; y++) {
             String tmpString = "";
@@ -325,24 +220,63 @@ public class Sudoku {
             level = 3;
         }
         myLevel = level;
-        return level;
+        return GetMyLevel();
     }
+
+
     public String GetPresentation() {
         facit = CreateSudoku();
-        szPres = SetPresentation();
-        SetupReduntantSolutions();
         //TBD
-        boolean reduncancy = true;
-        int loopCnt = 0;
-        while (reduncancy){
-            reduncancy = ReduntantSolutions();
-            loopCnt++;
-            if (loopCnt > 20) {
-                break;
+        //SetupDebugMatris();
+        Integer[] cells = GetRandom(81, 81);
+        matrisPresentation = CopyMatris(matris);
+
+        for (Integer cellV : cells) {
+            Integer y = (cellV / 9) + 1;
+            Integer x = (cellV % 9) + 1;
+            Integer tempV = matrisPresentation[y - 1][x - 1];
+            matrisPresentation[y - 1][x - 1] = -1;
+            testMatris = CopyMatris(matrisPresentation);
+            int solutions = solve(2);
+            if (solutions != 1) {
+                matrisPresentation[y - 1][x - 1] = tempV;
             }
         }
+        return MatrisPresentation();
+    }
 
-        return szPres;
+    private Integer[][] CopyMatris(Integer[][] inMatris) {
+        Integer[][] tmp;
+        tmp = new Integer[cCols][cRows];
+        for (Integer y = 1; y <=  cCols; y++) {
+            for (Integer x = 1; x <= cRows; x++) {
+                tmp[y - 1][x - 1] = inMatris[y - 1][x - 1];
+            }
+        }
+        return tmp;
+    }
+
+    private Integer[] GetRandom(Integer Base, Integer Cnt) {
+        List<Integer> randomList = new ArrayList<Integer>();
+        while (randomList.size() < Cnt) {
+            int rnd = (int) (Math.random() * (Base)) ;
+            if (Collections.frequency(randomList, rnd) <= 0) {
+                randomList.add(rnd);
+            }
+        }
+        Integer[] simpleArray = new Integer[randomList.size()];
+        randomList.toArray(simpleArray);
+        return simpleArray;
+    }
+
+
+    private void SetupDebugMatris() {
+        for (Integer y = 1; y <=  cCols; y++) {
+            for (Integer x = 1; x <= cRows; x++) {
+                debugMatris[y-1][x-1] = matrisPresentation[y-1][x -1];
+            }
+
+        }
     }
 
     public void Reset() {
@@ -354,6 +288,7 @@ public class Sudoku {
     }
 
     private void SetupReduntantSolutions() {
+        ClearPlayingField();
         for (Integer y = 1; y <= cCols; y++) {
             for (Integer x = 1; x <= cRows; x++) {
                 solution[y - 1][x - 1] = matrisPresentation[y - 1][x - 1];
@@ -362,14 +297,38 @@ public class Sudoku {
         for (Integer y = 1; y <= cCols; y++){
             for (Integer x = 1; x<= cRows; x++) {
                 CellInformation cell = new CellInformation(x, y, solution[y-1][x-1]);
+                cell.IsMajor = cell.satisfied;
                 playingField[y-1][x-1] = cell;
             }
         }
     }
+
+    private void ClearPlayingField() {
+        for (Integer y = 1; y <= cCols; y++) {
+            for (Integer x = 1; x <= cRows; x++) {
+                playingField[y - 1][x - 1] = null;
+                solution[y - 1][x - 1] = -1;
+            }
+        }
+    }
+
     public void debug() {
         //Check (not ready yet)
+
+        //Reset matrisPresentation to first cut.
+        for (Integer y = 1; y <=  cCols; y++) {
+            for (Integer x = 1; x <= cRows; x++) {
+                matrisPresentation[y-1][x-1] = debugMatris[y-1][x -1];
+            }
+        }
+
+        SetupReduntantSolutions();
         if (ReduntantSolutions()) {
-            //TBD
+            for (Integer y = 1; y <= cCols; y++) {
+                for (Integer x = 1; x <= cRows; x++) {
+                    debugMatris[y - 1][x - 1] = matrisPresentation[y - 1][x - 1];
+                }
+            }
         }
 
     }
@@ -452,6 +411,7 @@ public class Sudoku {
             for (Integer y = 1; y <= cCols; y++){
                 for (Integer x = 1; x<= cRows; x++) {
                     CellInformation cell = playingField[y-1][x-1];
+                    cell.ClearAvailable();
                     if (!cell.satisfied) {
                         Integer[] used = GetUsed(x, y, solution);
                         if (!cell.UpdateAvailableFromUsed(used)){
@@ -467,9 +427,23 @@ public class Sudoku {
         }
 
         SearchForAloneNumbersRows();
-        SearchForAloneNumbersCols();
         //Check if all fields satisfied!
         boolean allSatisfied = true;
+        for (Integer y = 1; y <= cCols; y++){
+            for (Integer x = 1; x<= cRows; x++) {
+                CellInformation cell = playingField[y - 1][x - 1];
+                if (!cell.satisfied) {
+                    allSatisfied = false;
+                }
+            }
+        }
+        if (allSatisfied) {
+            return false;
+        }
+
+        SearchForAloneNumbersCols();
+        //Check if all fields satisfied!
+        allSatisfied = true;
         for (Integer y = 1; y <= cCols; y++){
             for (Integer x = 1; x<= cRows; x++) {
                 CellInformation cell = playingField[y - 1][x - 1];
@@ -492,7 +466,12 @@ public class Sudoku {
                 }
             }
         }
-        if (tmpCells.size()>=4)
+        for(CellInformation cell : tmpCells){
+            String szTmp = cell.GetDebugValue();
+            Integer x = cell.xPos;
+            Integer y = cell.yPos;
+        }
+        if (tmpCells.size() > 0)
         {
             boolean tmpV = true;
             for(CellInformation cell : tmpCells){
@@ -517,4 +496,124 @@ public class Sudoku {
         return true;
     }
 
+    public boolean DebugValueMajor(Integer x, Integer y) {
+        CellInformation cell = playingField[y-1][x-1];
+        if (cell != null) {
+            return cell.IsMajor;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+// ------------------------------------------------------
+//        # Steg 1: Grundläggande kontroller
+// ------------------------------------------------------
+    private Boolean numInRow(Integer y, Integer value){
+        for (Integer x = 1; x <= cRows; x++) {
+            if (testMatris[y - 1][x - 1] == value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean numInCol(Integer x, Integer value) {
+        for (Integer y = 1; y <= cCols; y++) {
+            if (testMatris[y - 1][x - 1] == value) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //start_row, start_col = BOX * (row // BOX), BOX * (col // BOX)
+    //for i in range(start_row, start_row + BOX):
+    //        for j in range(start_col, start_col + BOX):
+    //        if board[i][j] == num:
+    //        return False
+    private Boolean numInBox(Integer inX, Integer inY, Integer value) {
+        try {
+            Integer sqYmin = (BOX * ((inY - 1) / BOX)) + 1;
+            Integer sqXmin = (BOX * ((inX - 1) / BOX)) + 1;
+            for (Integer y = sqYmin; y < sqYmin + BOX; y++) {
+                for (Integer x = sqXmin; x < sqXmin + BOX; x++) {
+                    if (testMatris[y - 1][x - 1] == value) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private Boolean is_valid(Integer x, Integer y, Integer value) {
+        try {
+            //Kontrollera rad
+            if (numInRow(y, value)) {
+                return false;
+            }
+            //Kontrollera kolumn
+            if (numInCol(x, value)) {
+                return false;
+            }
+            //Kontrollera 3x3-box
+            if (numInBox(x, y, value)) {
+                return false;
+            }
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
+
+// ------------------------------------------------------
+//        # Steg 2: Backtracking-lösare
+// ------------------------------------------------------
+
+    private Integer solve(Integer limit) { //false, 2
+        //Löser Sudoku.
+        //Om count_solutions=True returneras antal lösningar (upp till 'limit')."""
+        pair empty = find_empty();
+        if (empty==null) {
+            return 1;
+        }
+
+        Integer x = empty.getX();
+        Integer y = empty.getY();
+        Integer solutions = 0;
+        for (Integer value = 1; value <= 9; value++) {
+            if (is_valid(x, y, value)) {
+
+                testMatris[y - 1][x - 1] = value;
+                Integer result = solve(limit);
+                solutions = solutions + result;
+                if (solutions >= limit) {
+                    break;
+                }
+                testMatris[y-1][x-1] = -1;
+            }
+        }
+        testMatris[y-1][x-1] = -1;
+        return solutions;
+    }
+
+
+    private pair find_empty() {
+
+       for (Integer y = 1; y <= cCols; y++) {
+           for (Integer x = 1; x <= cRows; x++) {
+               if (testMatris[y - 1][x - 1] <= 0) {
+                   return new pair(x, y);
+               }
+           }
+       }
+       return null;
+    }
 }

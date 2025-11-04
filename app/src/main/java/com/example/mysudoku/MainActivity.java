@@ -3,18 +3,25 @@ package com.example.mysudoku;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Looper;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.concurrent.ExecutorService;
+import android.os.Handler;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
             {null, null, null, null, null, null, null, null, null}
     };
 
+    private ProgressBar loadingIndicator;
+
+    // To this:
+    private final ExecutorService executor = java.util.concurrent.Executors.newSingleThreadExecutor();
+
+    private final Handler handler = new Handler(Looper.getMainLooper());
     private Integer selectedX = -1;
     private Integer selectedY = -1;
 
@@ -45,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        loadingIndicator = findViewById(R.id.loadingIndicator);
 
         EditText valueText = (EditText) findViewById(R.id.editTextNumber11);
         valueText.setText("0");
@@ -67,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         SpinnerActivity spinnerActivity = new SpinnerActivity();
 
         spinner.setOnItemSelectedListener(spinnerActivity);
+
+        //Button button = (Button) findViewById(R.id.btnDebug);
+        //button.setVisibility(View.INVISIBLE);
+
     }
 
     private void InitPlayingField() {
@@ -206,11 +224,26 @@ public class MainActivity extends AppCompatActivity {
         Spinner spinner = (Spinner) findViewById(R.id.my_spinner_view);
         String text = spinner.getSelectedItem().toString();
 
-        mySudoku.Reset();
-        mySudoku.SetLevel(text);
-        String szSudoku = mySudoku.GetPresentation();
-        SetupField();
+        loadingIndicator.setVisibility(View.VISIBLE);
+        //findViewById(R.id.gridLayout).setVisibility(View.INVISIBLE); // Hide the grid while loading
+        executor.execute(() -> {
+            mySudoku.Reset();
+            mySudoku.SetLevel(text);
+            String szSudoku = mySudoku.GetPresentation();
+            //findViewById(R.id.gridLayout).setVisibility(View.VISIBLE);
+            handler.post(() -> {
+                // --- This code runs safely on the UI thread ---
+
+                // Now that the Sudoku is generated, update the EditText fields
+                SetupField();
+
+                // Hide the loading indicator and show the completed grid
+                loadingIndicator.setVisibility(View.GONE);
+                //findViewById(R.id.gridLayout).setVisibility(View.VISIBLE);
+            });
+        });
     }
+
     private void  SetupField()
     {
         for (Integer y = 1; y <= 9; y++) {
@@ -222,25 +255,52 @@ public class MainActivity extends AppCompatActivity {
 
     private void SetValue(Integer x, Integer y) {
         EditText valueText = playingField[y-1][x-1];
-        Integer test = mySudoku.matrisPresentation[y - 1][x - 1];
-        String szValue = Integer.toString(test);
-        if (test <= 0) {
+        Integer value = mySudoku.matrisPresentation[y - 1][x - 1];
+        String szValue = Integer.toString(value);
+        if (value <= 0) {
             szValue = "";
             valueText.setTextColor(Color.BLACK);
+            valueText.setFocusable(true);
+            valueText.setFocusableInTouchMode(true);
         }
         else {
             valueText.setTextColor(Color.BLUE);
+            valueText.setFocusable(false);
+            valueText.setFocusableInTouchMode(false);
         }
         valueText.setText(szValue);
         valueText.clearFocus();
     }
 
     private void correcting() {
+        boolean allCorrect = true;
         for (Integer y = 1; y <= 9; y++) {
             for (Integer x = 1; x <= 9; x++) {
-                CorrectField(x, y);
+                if (!CorrectField(x, y)) {
+                    allCorrect = false;
+                }
             }
         }
+        if (allCorrect) {
+            ShoutItLoud("Congratulations!", "Alla rätt"); //"You have successfully solved the Sudoku!
+        }
+    }
+
+    private void ShoutItLoud(String szTitle, String szMsg) {
+        //Create and show a pop-up window to congratulate the user.
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(szTitle);
+        builder.setMessage(szMsg);
+        builder.setPositiveButton("Play Again", (dialog, which) -> {
+            //This will start a new game when the user clicks the button.
+            starting();
+        });
+        builder.setNegativeButton("Close", (dialog, which) -> {
+            //This will simply close the pop-up.
+            dialog.dismiss();
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private boolean CorrectField(Integer x, Integer y) {
@@ -299,7 +359,12 @@ public class MainActivity extends AppCompatActivity {
             for (Integer x = 1; x <= 9; x++) {
                 String szValue = mySudoku.GetDebugCellValue(x, y);
                 EditText valueText = playingField[y-1][x-1];
-                valueText.setTextColor(Color.MAGENTA);
+                if (!mySudoku.DebugValueMajor(x, y)) {
+                    valueText.setTextColor(Color.MAGENTA);
+                }
+                else {
+                    valueText.setTextColor(Color.BLUE);
+                }
                 valueText.setText(szValue);
                 valueText.clearFocus();
             }

@@ -9,6 +9,8 @@ public class CellInformation {
     public Integer yPos = -1;
     public Integer myValue = -1;
     public boolean satisfied = false;
+    public boolean IsMajor = false;
+
     public int iError = 0;
     public List<Integer> available = new ArrayList<Integer>();
 
@@ -77,5 +79,4 @@ public class CellInformation {
         }
         return szValue;
     }
-
 }
