@@ -226,8 +226,14 @@ public class Sudoku {
 
     public String GetPresentation() {
         facit = CreateSudoku();
+        SetupPresentationMatris();
         //TBD
         //SetupDebugMatris();
+        return MatrisPresentation();
+    }
+    private Boolean SetupPresentationMatris() {
+        Boolean result = true;
+
         Integer[] cells = GetRandom(81, 81);
         matrisPresentation = CopyMatris(matris);
 
@@ -242,7 +248,39 @@ public class Sudoku {
                 matrisPresentation[y - 1][x - 1] = tempV;
             }
         }
-        return MatrisPresentation();
+        String tmpPres = MatrisPresentation();
+
+        if (GetMyLevel() < 3) {
+            //Show 20 random numbers extra into matrisPresentation if level "lätt"(1)
+            //Show 10 random numbers extra into matrisPresentation if level "medel"(2)
+            Boolean left = true;
+            Integer cnt = 20;
+            if (GetMyLevel() == 2) {
+                cnt = 10;
+            }
+            while (left) {
+                Integer[] tmpCells = GetRandom(81, cnt);
+                for (Integer cellV : tmpCells) {
+                    Integer y = (cellV / 9) + 1;
+                    Integer x = (cellV % 9) + 1;
+                    Integer tempV = matrisPresentation[y - 1][x - 1];
+                    if (tempV <= 0) {
+                        matrisPresentation[y - 1][x - 1] = matris[y - 1][x - 1];
+                        cnt = cnt - 1;
+                    }
+                }
+                if (cnt <= 0) {
+                    left = false;
+                    break;
+                }
+            }
+            String tmpPresLevel = MatrisPresentation();
+            //result = !tmpPres.equals(tmpPresLevel);
+            if (tmpPres.equals(tmpPresLevel)) {
+                result = false;
+            }
+        }
+        return result;
     }
 
     private Integer[][] CopyMatris(Integer[][] inMatris) {
