@@ -1,7 +1,8 @@
 package com.example.mysudoku;
 
+import static java.lang.System.in;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,6 +29,11 @@ public class Sudoku {
 
     private Integer myLevel = 2;
     public String szPres = "";
+
+    private String szPresEasy = "";
+    private String szPresMedium = "";
+    private String szPresHard = "";
+
 
     private Integer cRows = 9;
     private Integer cCols = 9;
@@ -226,14 +232,14 @@ public class Sudoku {
 
     public String GetPresentation() {
         facit = CreateSudoku();
-        SetupPresentationMatris();
-        //TBD
-        //SetupDebugMatris();
-        return MatrisPresentation();
+        if (SetupPresentationMatris()) {
+            //TBD
+            //SetupDebugMatris();
+            return MatrisPresentation();
+        }
+        return "";
     }
     private Boolean SetupPresentationMatris() {
-        Boolean result = true;
-
         Integer[] cells = GetRandom(81, 81);
         matrisPresentation = CopyMatris(matris);
 
@@ -249,14 +255,86 @@ public class Sudoku {
             }
         }
         String tmpPres = MatrisPresentation();
+        szPresHard = tmpPres;
 
-        if (GetMyLevel() < 3) {
+        Integer[][] tmpMatrisPres =  CopyMatris(matrisPresentation);
+        if (!SetPresForLevel(1, tmpPres)) return false;
+        szPresEasy = MatrisPresentation();
+
+        matrisPresentation = CopyMatris(tmpMatrisPres);
+        if (!SetPresForLevel(2, tmpPres)) return false;
+        szPresMedium = MatrisPresentation();
+
+        switch (GetMyLevel()) {
+            case 3: // Svår aka Hard
+                matrisPresentation = CopyMatris(tmpMatrisPres);
+                break;
+            case 2: // Medel aka Medium
+                matrisPresentation = SetupFrom(szPresMedium);
+                break;
+            case 1: // Lätt aka Easy
+                matrisPresentation = SetupFrom(szPresEasy);
+                break;
+        }
+        return true;
+
+    }
+
+    public void ChangeLevel() {
+        switch (GetMyLevel()) {
+            case 3: // Svår aka Hard
+                if (szPresHard.length()>=81) {
+                    matrisPresentation = SetupFrom(szPresHard);
+                }
+                break;
+            case 2: // Medel aka Medium
+                if (szPresMedium.length()>=81) {
+                    matrisPresentation = SetupFrom(szPresMedium);
+                }
+                break;
+            case 1: // Lätt aka Easy
+                if (szPresEasy.length()>=81) {
+                    matrisPresentation = SetupFrom(szPresEasy);
+                }
+                break;
+        }
+    }
+
+    private Integer[][] SetupFrom(String szPresMatris) {
+        Integer y = 1;
+        Integer x = 1;
+
+        ArrayList<String> rows = new ArrayList<String>();
+        for (String row : szPresMatris.split(";")) {
+            rows.add(row);
+        }
+        for (String row : rows) {
+            for (String value : row.split(",")) {
+                matrisPresentation[y - 1][x - 1] = Integer.parseInt(value);
+                x = x + 1;
+                if (x > 9) {
+                    x = 1;
+                    y = y + 1;
+                }
+            }
+        }
+        return CopyMatris(matrisPresentation);
+    }
+
+    private Boolean SetPresForLevel(Integer inLevel, String tmpPres) {
+        Boolean result = true;
+        if (inLevel < 3) {
+            Integer emptyCells = GetNumberOfEmpties(matrisPresentation);
             //Show 20 random numbers extra into matrisPresentation if level "lätt"(1)
             //Show 10 random numbers extra into matrisPresentation if level "medel"(2)
             Boolean left = true;
-            Integer cnt = 20;
-            if (GetMyLevel() == 2) {
+            Integer cnt = 15;
+            if (inLevel == 2) {
                 cnt = 10;
+            }
+            //If too many left in "svår" level don't add too many in easier levels...
+            if (emptyCells > 33) {
+                cnt = cnt - 5;
             }
             while (left) {
                 Integer[] tmpCells = GetRandom(81, cnt);
@@ -281,6 +359,18 @@ public class Sudoku {
             }
         }
         return result;
+    }
+
+    private Integer GetNumberOfEmpties(Integer[][] inMatrisPres) {
+        Integer cnt = 0;
+        for (Integer y = 1; y <=  cCols; y++) {
+            for (Integer x = 1; x <= cRows; x++) {
+                if (inMatrisPres[y-1][x-1] <= 0) {
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
     }
 
     private Integer[][] CopyMatris(Integer[][] inMatris) {
@@ -653,5 +743,14 @@ public class Sudoku {
            }
        }
        return null;
+    }
+
+    public Integer getSquare(Integer x, Integer y) {
+        if (y >= 4) {
+            int ibrak = 1;
+        }
+        Integer sqY = ((y - 1) / BOX);
+        Integer sqX = ((x - 1) / BOX) + 1;
+        return  (sqY * 3) + sqX;
     }
 }

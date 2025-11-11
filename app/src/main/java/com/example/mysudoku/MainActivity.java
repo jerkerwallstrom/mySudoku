@@ -82,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
         spinner.setOnItemSelectedListener(spinnerActivity);
 
-        //Button button = (Button) findViewById(R.id.btnDebug);
+        Button button = (Button) findViewById(R.id.btnDebug);
         //button.setVisibility(View.INVISIBLE);
+        button.setVisibility(View.VISIBLE);
 
     }
 
@@ -190,6 +191,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        Integer square = mySudoku.getSquare(x, y);
+        switch (square){
+            case 1: case 3: case 5: case 7: case 9:
+                valueText.setBackgroundColor(0x66EEEEEE);
+                break;
+            case 2: case 4: case 6: case 8:
+                // Replaces your current selection
+                //valueText.setBackgroundColor(0x66FAFAD2); //Ljusgul
+                valueText.setBackgroundColor(0xFFD0F0C0);  //Ljusgrön
+                break;
+        }
         playingField[y - 1][x - 1] = valueText;
     }
 
@@ -225,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
         String text = spinner.getSelectedItem().toString();
 
         loadingIndicator.setVisibility(View.VISIBLE);
-        //findViewById(R.id.gridLayout).setVisibility(View.INVISIBLE); // Hide the grid while loading
+        gridSetVisibility(false); // Hide the grid while loading
         executor.execute(() -> {
             mySudoku.Reset();
             mySudoku.SetLevel(text);
@@ -235,30 +247,52 @@ public class MainActivity extends AppCompatActivity {
                 // --- This code runs safely on the UI thread ---
 
                 // Now that the Sudoku is generated, update the EditText fields
-                SetupField();
+                SetupField(true);
 
                 // Hide the loading indicator and show the completed grid
                 loadingIndicator.setVisibility(View.GONE);
-                //findViewById(R.id.gridLayout).setVisibility(View.VISIBLE);
+                gridSetVisibility(true); // Show the grid after loading
+
             });
         });
     }
 
-    private void  SetupField()
-    {
+    private void gridSetVisibility(boolean visible) {
         for (Integer y = 1; y <= 9; y++) {
             for (Integer x = 1; x <= 9; x++) {
-                SetValue(x, y);
+                ShowFieldCell(visible, x, y);
             }
         }
     }
 
-    private void SetValue(Integer x, Integer y) {
+    private void ShowFieldCell(boolean visible, Integer x, Integer y) {
+        EditText valueText = playingField[y-1][x-1];
+        if (visible) {
+            valueText.setVisibility(View.VISIBLE);
+        }
+        else {
+            valueText.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void  SetupField(Boolean reset)
+    {
+        for (Integer y = 1; y <= 9; y++) {
+            for (Integer x = 1; x <= 9; x++) {
+                SetValue(x, y, reset);
+            }
+        }
+    }
+
+    private void SetValue(Integer x, Integer y, Boolean reset) {
         EditText valueText = playingField[y-1][x-1];
         Integer value = mySudoku.matrisPresentation[y - 1][x - 1];
         String szValue = Integer.toString(value);
         if (value <= 0) {
-            szValue = "";
+            if (reset) {
+                szValue = "";
+                valueText.setText(szValue);
+            }
             valueText.setTextColor(Color.BLACK);
             valueText.setFocusable(true);
             valueText.setFocusableInTouchMode(true);
@@ -267,8 +301,8 @@ public class MainActivity extends AppCompatActivity {
             valueText.setTextColor(Color.BLUE);
             valueText.setFocusable(false);
             valueText.setFocusableInTouchMode(false);
+            valueText.setText(szValue);
         }
-        valueText.setText(szValue);
         valueText.clearFocus();
     }
 
@@ -342,19 +376,19 @@ public class MainActivity extends AppCompatActivity {
     private void reseting() {
         //mySudoku.Reset();
         //ResetField();
-        SetupField();
+        SetupField(true);
     }
 
     private void ResetField(){
         for (Integer y = 1; y <= 9; y++) {
             for (Integer x = 1; x <= 9; x++) {
-                SetValue(x, y);
+                SetValue(x, y, true);
             }
         }
     }
 
     private void debugging() {
-        mySudoku.debug();
+        /*mySudoku.debug();
         for (Integer y = 1; y <= 9; y++) {
             for (Integer x = 1; x <= 9; x++) {
                 String szValue = mySudoku.GetDebugCellValue(x, y);
@@ -368,7 +402,9 @@ public class MainActivity extends AppCompatActivity {
                 valueText.setText(szValue);
                 valueText.clearFocus();
             }
-        }
+        }*/
+        mySudoku.ChangeLevel();
+        SetupField(false);
 
     }
     public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {

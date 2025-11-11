@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Use a selector as the root element -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The "item" tag defines the drawable to use.
+         By having only one item with no state specified,
+         this drawable will be used for ALL states (default). -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- The fill color of the EditText background -->
+            <solid android:color="@android:color/transparent" />
+
+            <!-- The permanent border -->
+            <stroke
+                android:width="1dp"
+                android:color="#FF0000" /> <!-- Your red border -->
+        </shape>
+    </item>
+
+</selector>
