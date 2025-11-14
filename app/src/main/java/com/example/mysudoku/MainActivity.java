@@ -22,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.concurrent.ExecutorService;
 import android.os.Handler;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     String tutorials[] = { "Lätt",
             "Medel",
             "Svår" };
+    TextView tmpText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loadingIndicator = findViewById(R.id.loadingIndicator);
 
+        TextView infoText = (TextView) findViewById(R.id.textViewSettingUpGame);
+        infoText.setVisibility(View.INVISIBLE);
+
+
+        tmpText = (TextView) findViewById(R.id.editTextTestInput);
         EditText valueText = (EditText) findViewById(R.id.editTextNumber11);
         valueText.setText("0");
         valueText.clearFocus();
@@ -236,6 +243,10 @@ public class MainActivity extends AppCompatActivity {
         Spinner spinner = (Spinner) findViewById(R.id.my_spinner_view);
         String text = spinner.getSelectedItem().toString();
 
+        TextView infoText = (TextView) findViewById(R.id.textViewSettingUpGame);
+        infoText.setVisibility(View.VISIBLE);
+
+
         loadingIndicator.setVisibility(View.VISIBLE);
         gridSetVisibility(false); // Hide the grid while loading
         executor.execute(() -> {
@@ -251,6 +262,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Hide the loading indicator and show the completed grid
                 loadingIndicator.setVisibility(View.GONE);
+                infoText.setVisibility(View.INVISIBLE);
+
                 gridSetVisibility(true); // Show the grid after loading
 
             });
@@ -416,6 +429,10 @@ public class MainActivity extends AppCompatActivity {
             int ibreak = 4;
             String text = parent.getItemAtPosition(pos).toString();
             mySudoku.SetLevel(text);
+            String tmp = String.format("Sätt nivå: %s", text);
+            //TextView tmpText = (TextView) findViewById(R.id.editTextTestInput);
+            tmpText.setText(tmp);
+
         }
 
         public void onNothingSelected(AdapterView<?> parent) {

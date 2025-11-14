@@ -13,7 +13,7 @@
             <!-- The permanent border -->
             <stroke
                 android:width="1dp"
-                android:color="#FF0000" /> <!-- Your red border -->
+                android:color="#CCCCCC" /> <!-- Your red border -->
         </shape>
     </item>
 
