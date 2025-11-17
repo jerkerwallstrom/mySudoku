@@ -300,6 +300,13 @@ public class Sudoku {
         }
     }
 
+    public boolean IsCoordInMatrisPres(Integer x, Integer y) {
+        if (matrisPresentation[y-1][x-1] > 0) {
+            return true;
+        }
+        return false;
+    }
+
     private Integer[][] SetupFrom(String szPresMatris) {
         Integer y = 1;
         Integer x = 1;

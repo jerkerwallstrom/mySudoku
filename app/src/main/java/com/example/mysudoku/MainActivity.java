@@ -239,6 +239,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void debug(View view) { debugging(); }
 
+    public void lock(View view) { lockSolution(); }
+
     private void starting() {
         Spinner spinner = (Spinner) findViewById(R.id.my_spinner_view);
         String text = spinner.getSelectedItem().toString();
@@ -401,25 +403,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void debugging() {
-        /*mySudoku.debug();
-        for (Integer y = 1; y <= 9; y++) {
-            for (Integer x = 1; x <= 9; x++) {
-                String szValue = mySudoku.GetDebugCellValue(x, y);
-                EditText valueText = playingField[y-1][x-1];
-                if (!mySudoku.DebugValueMajor(x, y)) {
-                    valueText.setTextColor(Color.MAGENTA);
-                }
-                else {
-                    valueText.setTextColor(Color.BLUE);
-                }
-                valueText.setText(szValue);
-                valueText.clearFocus();
-            }
-        }*/
         mySudoku.ChangeLevel();
         SetupField(false);
+    }
+
+    private void lockSolution() {
+        for (Integer y = 1; y <= 9; y++) {
+            for (Integer x = 1; x <= 9; x++) {
+                if (!mySudoku.IsCoordInMatrisPres(x, y)) {
+                    EditText valueText = playingField[y-1][x-1];
+                    String szValue = valueText.getText().toString().trim();
+                    if (1 == szValue.length()) {
+                        valueText.setTextColor(Color.MAGENTA);
+                    }
+                    valueText.clearFocus();
+                }
+            }
+        }
 
     }
+
     public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
         public void onItemSelected(AdapterView<?> parent, View view,
